@@ -18,15 +18,22 @@ class _CounterScreenState extends State<CounterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.red,
+      backgroundColor: Colors.yellow,
       appBar: AppBar(
+        centerTitle: true,
         title: Text('Meu Contador'),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Center(child: Text('Voce pressinou o botao:', style: TextStyle(
-            fontSize: 24,
+          Center(child: Text('Sua contador esta em:', 
+          style: 
+          TextStyle(
+            fontSize: 30,
+            foreground: Paint()
+              ..style = PaintingStyle.stroke
+              ..strokeWidth = 1
+              ..color = Colors.red
           ),
           ),
           ),
@@ -34,7 +41,10 @@ class _CounterScreenState extends State<CounterScreen> {
             (child: Text(
               '$resultado', 
               style: TextStyle(
-                fontSize: 30,
+                fontSize: 45,
+                foreground: Paint()
+                  ..style = PaintingStyle.stroke
+                  ..strokeWidth = 2
               ),
             ),
           ),
@@ -44,13 +54,13 @@ class _CounterScreenState extends State<CounterScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           FloatingActionButton(
-            backgroundColor: Colors.black,
+            backgroundColor: Colors.blue,
             onPressed: () {
               setState(() {
                 resultado -=1;
               });
             },
-            child: Icon(Icons.remove),
+            child: Icon(Icons.exposure_minus_1),
           ),
           FloatingActionButton(
             backgroundColor: Colors.green,
@@ -60,7 +70,7 @@ class _CounterScreenState extends State<CounterScreen> {
                 resultado +=1;  
             });
           },
-          child: Icon(Icons.add),
+          child: Icon(Icons.exposure_plus_1),
           ),
         ],
       ),
