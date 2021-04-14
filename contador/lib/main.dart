@@ -18,7 +18,7 @@ class _CounterScreenState extends State<CounterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.yellow,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         centerTitle: true,
         title: Text('Meu Contador'),
@@ -33,7 +33,7 @@ class _CounterScreenState extends State<CounterScreen> {
             foreground: Paint()
               ..style = PaintingStyle.stroke
               ..strokeWidth = 1
-              ..color = Colors.red
+              ..color = Colors.blue[900]
           ),
           ),
           ),
@@ -54,7 +54,7 @@ class _CounterScreenState extends State<CounterScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           FloatingActionButton(
-            backgroundColor: Colors.blue,
+            backgroundColor: Colors.red,
             onPressed: () {
               setState(() {
                 resultado -=1;
@@ -62,6 +62,7 @@ class _CounterScreenState extends State<CounterScreen> {
             },
             child: Icon(Icons.exposure_minus_1),
           ),
+          SizedBox(width: 50),
           FloatingActionButton(
             backgroundColor: Colors.green,
             onPressed: () {
